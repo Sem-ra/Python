@@ -249,8 +249,8 @@ for i in range(sayi,0,-1):
     if(sayi%i==0):
         print(f'{i}' , end=" ")
 
-
-sayi_=int(input("Kütüphane kullanarak, Tam Bölenlerini öğrenmek için Sayiyi giriniz::" ))
+print(" ")
+sayi_=int(input("Kütüphane kullanarak, Tam Bölenlerini öğrenmek için Sayiyi giriniz: " ))
 print(divisors(sayi_)) 
 
 # #Çok satırlı string istersen üçlü tırnak da kullanabilirsin:
