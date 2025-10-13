@@ -1,7 +1,3 @@
-from sympy import isprime, primerange, nextprime,divisors
-
-
-
 # """
    
 # Python’da kütüphaneleri kullanmanın en temel yolu import ifadesidir.
@@ -118,11 +114,6 @@ from sympy import isprime, primerange, nextprime,divisors
 
 
 #odev3
-# 1) 1 İLE 100 ARASINDA ÜRETİLECEK BİR SAYIYI AŞAĞI YUKARI İFADELERİ İLE BULDURMAYA ÇALIŞIN
-##RANDOM MODLÜ İÇİN "python ramdom"     şeklinde arama yapın
-## 100 üzerinden puanlama yapın. her soru 20 puan
-## hal bilgilerini kullanıcıdan alın ve her soru belirtilen can sayısı üzerinden hesaplansın
-
 import random
 sayi=random.randint(1,100)
 print(sayi)
@@ -131,27 +122,21 @@ print(sayi)
 hak=int(input("sayıyı kaç seferde tahmin edeceksiniz: "))
 puan=100 #100 üzerinden her bir soru 20 puan
 
-for i in range(0,hak,+1):
-    tahmin= int(input(f"{i+1}. tahmin: "))
+for i in range(1,hak+1,+1):
+    tahmin= int(input("sayıyı tahmin ediniz: "))
     
-    if(sayi==tahmin ):
-        puanKalan = puan - (20 * i)
-        print(f"{i+1}. seferde, bildiniz.  Puanınız: {puanKalan}") 
-        break
-        
-        # if(i<6):
-        #     print(f"Puanınız: {puan-(20*(i))}")
-        # else:
-        #     print(f"Puan alamadınız.")
-        # break
-    else:
-        if(tahmin>sayi and i<hak-1):
-           print(f"{i+1}. tahmindesiniz.sayıyı daha küçük giriniz")
-        elif(sayi>tahmin and i<hak-1):
-           print(f"{i+1}. Tahmindesiniz. sayı daha büyük giriniz")
+    if(sayi==tahmin):
+        print(f"{i}. seferde, bildiniz.")
+        if(i<6):
+            print(f"Puanınız: {puan-(20*(hak-i))}")
         else:
-           print(f"Hakkınız kalmadı. Tahmin ettiğiniz sayı: {sayi}")
-    
+            print(f"Puan alamadınız.")
+        break
+    else:
+       if(tahmin>sayi):
+           print(f"{i}. tahmindesiniz.sayıyı daha küçük giriniz")
+       else:
+           print(f"{i}. Tahmindesiniz. sayı daha büyük giriniz")
 
 
 
@@ -173,11 +158,6 @@ else:
             break
     else:
         print(f"{sayi} asaldır.")
-AsalMi=isprime(sayi)
-if(AsalMi):
-    print(f"Sympy Kütüphanesi yardımı ile asal sayı kontrolü: {sayi} Asal bir sayıdır.")
-else:
-    print(f"{sayi} Asal Değildir.Asal sayılar 1 ve kendisi dışında böleni olmayan sayılardır.")
 
 # #________________________________________________________________________________________
 
@@ -208,7 +188,7 @@ for i in range(1,kez+1):
 def listeyeCevir(*params):  ## * tek yıldızda tuple tipi liste ** çift yıldızda dictionary belirttiğimiz anlamına gelir
     liste1=[]
     liste1.append(params)
-    print(f"Sınırsız sayıdaki parametre için Liste: {liste1}")
+    print(liste1)
 
 listeyeCevir(1,2,3)
 
@@ -235,44 +215,16 @@ def AsalKontrol():
             print(f"{j} asaldır.")
     
 AsalKontrol()
-#Fonks. olduğu için kütüphane kullanımı gösteriminde tekrar input aldım
-print("iki sayı arasındaki asal sayıları yazdırmak için: ")
-sayi_1=int(input("Birinci sayıyı giriniz: "))
-sayi_2=int(input("İkinci sayıyı giriniz: "))
-print(list(primerange(sayi_1, sayi_2+1)))
 #----------------------------------------------------------
 ##3.4  Kendisine gönderilen bir sayının tam bölenlerini bir liste şeklinde döndür
-print("Bir sayınun tam bölenlerini bulmak için: ")
 sayi=int(input("sayı girin: "))
 print(f'{sayi} sayısının tam bölenleri: ')
 for i in range(sayi,0,-1):
     if(sayi%i==0):
         print(f'{i}' , end=" ")
 
-print(" ")
-sayi_=int(input("Kütüphane kullanarak, Tam Bölenlerini öğrenmek için Sayiyi giriniz: " ))
-print(divisors(sayi_)) 
-
 # #Çok satırlı string istersen üçlü tırnak da kullanabilirsin:
 # print("""Merhaba
 # Dünya
 # Python""")
-
- ## ASAL SAYI İÇİN KULLANILABİLECEK KÜTÜPHANE Sympy. Kurulum için:pip install sympy  // python -m pip install sympy !! cmd e yazılıyor
-
-## from sympy import isprime, primerange, nextprime
-# Örnek
-# print(isprime(17))          # True (17 asal)
-# print(list(primerange(1, 20)))  # [2, 3, 5, 7, 11, 13, 17, 19]
-# print(nextprime(20))        # 23 (20'den sonraki asal)
-
-## SAYININ TAM BÖLENLERİ
-# TAM BÖLEN İÇİN KULLANILABİLECEK KÜTÜPHANE 
-# Kurulum için:pip install sympy
-# from sympy import divisors
-# öR/
-# print(divisors(12))  # [1, 2, 3, 4, 6, 12]
-
-
-
 
