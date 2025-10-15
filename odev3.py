@@ -1,3 +1,7 @@
+
+
+
+
 # """
    
 # Python’da kütüphaneleri kullanmanın en temel yolu import ifadesidir.
@@ -178,9 +182,10 @@ else:
 # # 3.4- Kendisine gönderilen bir sayının tam bölenlerini bir liste şeklinde döndür
 
 #3.1
+
 kez=int(input("Kelime kaç defa yazılsın: "))
 kelime=input("Kelimeyi yazınz: ")
-for i in range(1,kez+1):
+for i in range(0,kez+1):
    print(kelime)
 #----------------------------------------------------------------------------------
 
