@@ -203,7 +203,7 @@ class Teacher(Person):
         self.branch=branch
         self.workingTime=workingTime
     def getInfo(self):
-        print(f"Teacher: {self.branch} \nWorking Time: {self.workingTime}")
+        print(f"Branch: {self.branch} \nWorking Time: {self.workingTime}")
         super().getInfo()
     def teacherList(self,kisiler):
         print("Teacher List:")
