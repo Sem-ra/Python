@@ -110,3 +110,34 @@ c1=Circle() #yarçapı belirtmezsek default olarak 1 alır
 c2=Circle(5)
 print(f"c1 yarıçap: {c1.yaricap} alan: {c1.alan()} çevre: {c1.cevre()}")
 print(f"c2 yarıçap: {c2.yaricap} alan: {c2.alan()} çevre: {c2.cevre()}")
+
+
+
+"""
+Class tanımlamak için yapı,
+
+class className:
+        attributes (özellikler)  # genel çerçeve bu şekilde. #eğer özellik ve method tanımlanmadıysa pass kullanılır.hata vermemesi için.Bu pass i if vs de de kullanabiliriz. hata vermemesi için. Boş tanımlamış oluyoruz.
+        methodlar (yapıcı method ve diğer methodlar)
+object (instance) (nesne)
+
+
+
+class ClassName:
+    pass #eğer özellik ve method tanımlanmadıysa
+    Attribute (özellikler)
+    methodlar
+    constructor
+    def __init__(self, parametreler):
+        #object attribute
+        self.attribute1=parametre1
+        self.attribute2=parametre2
+        ...
+        #class attribute
+        ClassName.class_attribute=değer     
+
+
+
+
+
+"""
