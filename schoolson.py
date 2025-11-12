@@ -1,28 +1,28 @@
 """
 Sinif, nesne (object) üretmek için kullanilan bir şablondur (template)
 Sinif içinde özellikler (attributes) ve davranişlar (methods) tanimlanir.
-
 __init__ : kurucu metot: siniftan her yeni nesne(örnek) oluşturulduğunda otomatik çalişir.
 
 self: Sinifin kendisini temsil eden özel bir kelimedir. Yani self.name demek, bu nesneye ait name alani demektir.
-
 self.name → sinifa (nesneye) ait özellik (attribute),yani bu değer artik o nesnenin içinde saklanir.
 self.name, Nesnenin içindeki kalici özellik, Nesne var oldukça kullanilabilir.
-
 name ->Dişaridan gelen geçici parametre, Fonksiyon çağrilirken kullanilir
-
 “Parametreyle gelen name değerini al,ve bunu bu nesnenin self.name adli özelliğine ata.” demektir.
  Self sadece o nesneyi (objeyi) temsil eder — yani “bu nesnenin içindeki şeyler” demek.                                       
 
 class sinifAdi:
-    def__init__(self,name,surname):         
+    def __init__(self,name,surname):         
         self.name=name                      
         self.surname=surname 
 
 
 Kalitim(Inheritance)
+
 Kalitim, alt sinifin üst sinifin özelliklerini ve metotlarini kullanabilmesidir.
 Alt sinif tanimlanirken, miras alacak sinif parantez içinde belirtilir.
+miras alınan (base/super) sınıfın bütün özelliklerini almak zorunda değilsin.
+Yani Python’da kalıtım (inheritance) kullanırken, alt sınıf (child/subclass) isterse üst sınıfın (parent/superclass) bazı özelliklerini kullanabilir, 
+isterse ezebilir (override) veya hiç kullanmayabilir.
 
 class Student(Person):
 -----------------
@@ -31,14 +31,14 @@ class Student(Person):
 Tercih edilen yöntem --> super anahtar kelimesinin kullanildiği yöntem.
 1. yöntem
 class Student(Person):
-    def__init__(self,number,name,surname):    hem üst sinif özellikleri hem de alt sinif özellikleri parametre olarak belirtilir
+    def __init__(self,number,name,surname):    hem üst sinif özellikleri hem de alt sinif özellikleri parametre olarak belirtilir
     Person().__init__(self,name,surname)     Burada üst sinifitan alinacak özellikleri belirtmiş olduk
         self.number=number                    burada ise alt sinifin number parametresini self.name özelliğine aktardık
 
 
 2. yöntem
 class Student(Person):
-    def__init__(self,number,name,surname):   
+    def __init__(self,number,name,surname):   
     Super().__init__(name,surname)         # fark burada selflemedik. super anahtar kelimesini kullandik.SUPER'de python zaten SELF'i biliyor.
         self.number=number
 
@@ -332,3 +332,4 @@ employees.extend([e1,e2,e3])
 
 
 Menu()
+print(Person.mro())
